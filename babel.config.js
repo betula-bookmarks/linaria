@@ -43,27 +43,10 @@ module.exports = {
     },
     {
       /**
-       * we use the same config for src/__tests__ and src/__fixtures__ to not break existing tests
+       * we have to transpile JSX in tests
        */
       test: /src\/((__tests__)|(__fixtures__))\//,
-      presets: [
-        '@babel/preset-react',
-        [
-          '@babel/preset-env',
-          {
-            targets: {
-              browsers: [
-                'last 2 versions',
-                'not ie 11',
-                'not ie_mob 11',
-                'not op_mini all',
-                'not dead',
-              ],
-            },
-            useBuiltIns: false,
-          },
-        ],
-      ],
+      presets: ['@babel/preset-react'],
     },
   ],
 };
